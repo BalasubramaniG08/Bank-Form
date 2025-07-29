@@ -24,9 +24,8 @@ body {
   align-items: center;
 }
 
-/* ====================
-   Component Layout
-==================== */
+/* component  */
+
 .component {
   width: 100%;
   max-width: var(--max-width);
@@ -50,9 +49,8 @@ body {
   padding-left: 12px;
 }
 
-/* ====================
-   Form Fields
-==================== */
+/* form  */
+
 .input-group {
   display: flex;
   flex-direction: column;
@@ -82,9 +80,8 @@ body {
   outline: none;
 }
 
-/* ====================
-   Buttons
-==================== */
+/* button  */
+
 .button {
   display: inline-block;
   padding: 10px 20px;
@@ -102,20 +99,12 @@ body {
   background-color: var(--accent);
 }
 
-/* ====================
-   Row (Default Column)
-==================== */
 .row {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-
-
-/* ====================
-   Bank Actions Row - Always Row Layout
-==================== */
 .bank-actions .row {
   display: flex;
   flex-direction: row;
@@ -128,9 +117,6 @@ body {
   min-width: 0;
 }
 
-/* ====================
-   Box Styling
-==================== */
 .customer-box {
   background: #f9fbff;
   border: 1px solid #dce6f0;
@@ -150,9 +136,7 @@ body {
   color: var(--primary);
 }
 
-/* ====================
-   Output Box
-==================== */
+
 .outbox {
   margin-top: 12px;
   padding: 10px;
@@ -175,16 +159,14 @@ body {
   min-width: 0;
 }
 
-/* ✅ Make customer details display in row always */
 .customer-details .row {
   display: flex;
   flex-direction: row;
   gap: 20px;
   justify-content:flex-start;
-  flex-wrap: wrap; /* allow wrapping if too tight */
+  flex-wrap: wrap;
 }
 
-/* Make sure boxes share width */
 .customer-details .customer-box {
   flex: 1;
   min-width: 220px;
@@ -193,9 +175,8 @@ body {
 
 
 
-/* ====================
-   Responsive - Do NOT stack bank actions
-==================== */
+/* Responsive  */
+
 @media (max-width: 768px) {
   .row {
     flex-direction: column;
