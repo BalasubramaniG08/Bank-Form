@@ -10,7 +10,7 @@
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   --radius: 10px;
   --font: 'Poppins', sans-serif;
-  --max-width: 950px;
+  --max-width: 750px;
 }
 
 body {
@@ -29,7 +29,7 @@ body {
 ==================== */
 .component {
   width: 100%;
-  max-width: var(--max-width); /* Medium width */
+  max-width: var(--max-width);
   background: var(--white);
   padding: 24px;
   margin-bottom: 32px;
@@ -103,7 +103,7 @@ body {
 }
 
 /* ====================
-   Rows and Boxes
+   Row (Default Column)
 ==================== */
 .row {
   display: flex;
@@ -111,17 +111,27 @@ body {
   gap: 20px;
 }
 
-/* Only make bank actions (3rd component) a horizontal row */
+
+
+/* ====================
+   Bank Actions Row - Always Row Layout
+==================== */
 .bank-actions .row {
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
-  flex-wrap: nowrap;
-  align-items: flex-start;
+  gap: 20px;
 }
 
-.customer-box {
+.bank-actions .customer-box {
   flex: 1;
-  min-width: 220px;
+  min-width: 0;
+}
+
+/* ====================
+   Box Styling
+==================== */
+.customer-box {
   background: #f9fbff;
   border: 1px solid #dce6f0;
   padding: 18px;
@@ -141,30 +151,69 @@ body {
 }
 
 /* ====================
-   Output Box (Results)
+   Output Box
 ==================== */
 .outbox {
   margin-top: 12px;
   padding: 10px;
   background-color: #e6f2ff;
-  border-left: 4px solid var(--primary);
   border-radius: var(--radius);
   font-size: 14px;
   color: #222;
   min-height: 24px;
 }
 
+.bank-actions .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.bank-actions .customer-box {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ✅ Make customer details display in row always */
+.customer-details .row {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content:flex-start;
+  flex-wrap: wrap; /* allow wrapping if too tight */
+}
+
+/* Make sure boxes share width */
+.customer-details .customer-box {
+  flex: 1;
+  min-width: 220px;
+}
+
+
+
+
 /* ====================
-   Responsive
+   Responsive - Do NOT stack bank actions
 ==================== */
 @media (max-width: 768px) {
-  .row,
+  .row {
+    flex-direction: column;
+  }
+
   .bank-actions .row {
     flex-direction: column;
   }
 
+  .bank-actions .customer-box {
+    width: 100%;
+  }
+
   .button {
     width: 100%;
-    text-align: center;
   }
+
 }
+
+
+
