@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bank Form</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Component 1 -->
+  <div class="component">
+    <h2>1. Enter Customer Details</h2>
+    <form id="customerForm">
+      <div class="input-group">
+        <label>Customer Name</label>
+        <input type="text" id="name" required />
+      </div>
+      <div class="input-group">
+        <label>Account Number</label>
+        <input type="text" id="account" required />
+      </div>
+      <div class="input-group">
+        <label>Initial Balance</label>
+        <input type="number" id="balance" required />
+      </div>
+      <button type="submit" class="button">Submit</button>
+    </form>
+  </div>
+
+  <!-- Component 2 -->
+  <div class="component">
+    <h2>2. Customer Details</h2>
+    <div class="row" id="customerDetails"></div>
+  </div>
+
+  <!-- Component 3 -->
+  <div class="component bank-actions">
+  <h2>3. Bank Actions</h2>
+  <div class="row">
+    <div class="customer-box">
+      <h3>Deposit (Customer 1)</h3>
+      <input type="number" id="depositAmount" placeholder="Amount to deposit" />
+      <button class="button" onclick="deposit()">Deposit</button>
+      <div class="outbox" id="depositOut"></div>
+    </div>
+
+    <div class="customer-box">
+      <h3>Withdraw (Customer 2)</h3>
+      <input type="number" id="withdrawAmount" placeholder="Amount to withdraw" />
+      <button class="button" onclick="withdraw()">Withdraw</button>
+      <div class="outbox" id="withdrawOut"></div>
+    </div>
+
+    <div class="customer-box">
+      <h3>Bank Balance (Customer 3)</h3>
+      <button class="button" onclick="checkBalance()">Show Balance</button>
+      <div class="outbox" id="balanceOut"></div>
+    </div>
+  </div>
+
+</div>
+  <script src="script.js"></script>
+</body>
+</html>
